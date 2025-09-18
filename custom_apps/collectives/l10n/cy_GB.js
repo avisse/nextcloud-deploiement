@@ -1,0 +1,28 @@
+OC.L10N.register(
+    "collectives",
+    {
+    "Share link" : "Rhannu dolen",
+    "Settings" : "Gosodiadau",
+    "Loading…" : "Yn llwytho…",
+    "View" : "Golwg",
+    "Edit" : "Golygu",
+    "Choose" : "Dewisa",
+    "Restore" : "Adfer",
+    "Delete permanently" : "Dileu'n barhaol",
+    "Cancel" : "Diddymu",
+    "Create" : "Creu",
+    "Back" : "Nôl",
+    "Delete" : "Dileu",
+    "Rename" : "Ailenwi",
+    "Done" : "Done",
+    "Title" : "Teitl",
+    "Favorite" : "Ffefryn",
+    "Favorites" : "Ffefrynnau",
+    "Deleted" : "Wedi dileu",
+    "Add another link" : "Ychwanegu dolen arall",
+    "Unshare" : "Dad-rannu",
+    "Download" : "Llwytho i lawr",
+    "Link copied" : "Dolen wedi'i gopïo",
+    "Copied" : "Copïwyd"
+},
+"nplurals=4; plural=(n==1) ? 0 : (n==2) ? 1 : (n != 8 && n != 11) ? 2 : 3;");

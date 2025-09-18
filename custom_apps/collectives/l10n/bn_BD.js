@@ -1,0 +1,27 @@
+OC.L10N.register(
+    "collectives",
+    {
+    "You are not allowed to share %s" : "আপনি %s ভাগাভাগি করতে পারবেননা",
+    "Share link" : "লিংক ভাগাভাগি করেন",
+    "Settings" : "সেটিংস",
+    "Edit" : "সম্পাদনা",
+    "Choose" : "বেছে নিন",
+    "Restore" : "ফিরিয়ে দাও",
+    "Cancel" : "বাতির",
+    "Create" : "তৈরী কর",
+    "Back" : "পেছনে যাও",
+    "Delete" : "মুছে",
+    "Rename" : "পূনঃনামকরণ",
+    "Done" : "Done",
+    "Title" : "শিরোনাম",
+    "Favorite" : "প্রিয়জন",
+    "Favorites" : "প্রিয়জন",
+    "Deleted" : "মুছে ফেলা",
+    "Unshare" : "ভাগাভাগি বাতিল ",
+    "Download" : "ডাউনলোড",
+    "No other versions available" : "আর কোন সংষ্করণ প্রাপ্তব্য নয়",
+    "Sharing" : "ভাগাভাগিরত",
+    "Versions" : "সংষ্করন",
+    "Failed to revert {page} to revision {timestamp}." : " {page} সংশোধিত  {timestamp} এ ফিরে যেতে ব্যার্থ হলো।"
+},
+"nplurals=2; plural=(n != 1);");
