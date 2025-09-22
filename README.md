@@ -1,10 +1,10 @@
-# 🗂️ Projet – Nextcloud : Espace de collaboration & fichiers (Docker)
+#  Projet – Nextcloud : Espace de collaboration & fichiers (Docker)
 
-## 🎯 Contexte & objectifs
+## Contexte & objectifs
 La collectivité souhaite centraliser **stockage, partage et collaboration** (fichiers, agendas, contacts) en environnement **auto‑hébergé** et conforme **RGPD**.
 Objectifs du pilote : 30–50 comptes, stack **Docker Compose** simple et reproductible, **persistance** claire (data/config/apps) et **performances** via APCu/Redis.
 
-## 🏗️ Architecture
+##  Architecture
 - **app** : `nextcloud:stable-apache` (Apache inclus)
 - **db** : `mariadb:lts`
 - **redis** : `redis:alpine` (file locking & cache)
@@ -14,7 +14,7 @@ Objectifs du pilote : 30–50 comptes, stack **Docker Compose** simple et reprod
   - `./custom_apps` → `/var/www/html/custom_apps`  
   - `./db` → `/var/lib/mysql`
 
-## ⚙️ Déploiement – `docker-compose.yml`
+##  Déploiement – `docker-compose.yml`
 ```yaml
 version: '3.8'
 
@@ -65,9 +65,9 @@ services:
 networks:
   nextcloud:
 ```
-> 🔎 **Important** : monter **/var/www/html/data** (et non tout `/var/www/html`) pour ne pas écraser le core Nextcloud.
+> **Important** : monter **/var/www/html/data** (et non tout `/var/www/html`) pour ne pas écraser le core Nextcloud.
 
-## 🚀 Mise en service
+## Mise en service
 1. **Prérequis** : Debian 12, Docker & Compose installés, DNS/FQDN si besoin.  
 2. **Arborescence** :
 ```
@@ -87,7 +87,7 @@ docker compose up -d
 # Admin auto (si variables définies) : admin / adminpass (à changer)
 ```
 
-## 🔧 Optimisations post‑install
+## Optimisations post‑install
 - `config/apcu.config.php`
 ```php
 <?php
@@ -113,11 +113,11 @@ $CONFIG = [
 */5 * * * * docker compose exec -u www-data nextcloud_app php -f cron.php >/dev/null 2>&1
 ```
 
-## 🔒 Sécurisation (paliers)
+## Sécurisation (paliers)
 - **Pilote interne** : accès LAN, secrets forts (`rootpass`, `nextcloudpass`, `adminpass`), sauvegardes basiques.
 - **Pré‑prod / Prod** : reverse proxy (Traefik/NPM/Caddy) + **TLS Let’s Encrypt**, ajuster `TRUSTED_PROXIES` (IP/CIDR) & `OVERWRITEPROTOCOL=https`, headers sécurité (HSTS/CSP), fail2ban, apps en liste blanche, quotas & 2FA.
 
-## 💾 Sauvegardes & restauration
+## Sauvegardes & restauration
 Script simple de sauvegarde (DB + config + data) :
 ```bash
 #!/usr/bin/env bash
@@ -132,7 +132,7 @@ echo "Backup OK -> ${STAMP}"
 ```
 Restauration (schéma) : `docker compose down` → restaurer SQL + `config/` + `data/` → `docker compose up -d` → vérifier logs, `occ maintenance:mode --off` au besoin.
 
-## 👩‍💻 Administration (occ)
+## Administration (occ)
 ```bash
 docker compose exec --user www-data nextcloud_app php occ status
 docker compose exec --user www-data nextcloud_app php occ app:list
@@ -140,11 +140,10 @@ docker compose exec --user www-data nextcloud_app php occ user:add alice
 docker compose exec --user www-data nextcloud_app php occ maintenance:mode --on
 ```
 
-## ✅ Résultats (pilote)
+##  Résultats (pilote)
 - Plateforme unique de partage & collaboration
 - Moins d’e-mails lourds (liens sécurisés)
 - Accès web/bureau/mobile
 - Base solide pour montée en charge & ouverture sécurisée
 
----
-✍️ Auteur : **Steve Avisse**
+
