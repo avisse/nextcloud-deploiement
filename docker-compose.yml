@@ -48,7 +48,7 @@ services:
       - OVERWRITEPROTOCOL=http
       
     ports:
-      - "8082:80"   # ← C’est cette ligne qu’il faut ajouter
+      - "8082:80"   
       
     networks:
       - nextcloud
